@@ -24,7 +24,7 @@ RestingECG = st.selectbox("Resting ECG",["Normal","ST","LVH"])
 MaxHR = st.number_input("Max Heart Rate",60,202)
 ExcerciseAngina = st.radio("Excercise Angina",["Y","N"])
 ST_Slope=st.selectbox("ST_Slope",["Up","Flat","Down"])
-Old_peak = st.slider("Old Peak",-3,7,step=0.1)
+Old_peak = st.slider("Old Peak",-3.0,7.0,step=0.1)
 
 #ChestPain = pd.DataFrame({'ChestPainType'}[ChestPainType])
 
