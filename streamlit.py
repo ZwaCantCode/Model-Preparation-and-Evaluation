@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import pickle 
 import os
-from sklearn.preprocessing import OneHotEncoder as encoder
+from sklearn.preprocessing import OneHotEncoder 
 
-
+encoder = OneHotEncoder(sparse_output=False)
 model='rf_heartDisease_model.pkl'
 
 with open(model,'rb') as f:
