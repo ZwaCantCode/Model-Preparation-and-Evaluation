@@ -33,7 +33,7 @@ df_result['RestingECG'] = RestingECG
 df_result['ExcerciseAngina'] = ExcerciseAngina
 df_result['ST_Slope']=ST_Slope
 
-input_encoded = encoder.transform(df_result).toarray()
+input_encoded = encoder.fit_transform(df_result).toarray()
 input_onehot_df = pd.DataFrame(input_encoded, columns=encoder.get_feature_names_out())
 
 input_data = [input_onehot_df['onehotencoder__ChestPainType_ASY', 'onehotencoder__ChestPainType_ATA',
