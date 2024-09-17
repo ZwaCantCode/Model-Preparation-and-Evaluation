@@ -4,8 +4,8 @@ import pickle
 import os
 from sklearn.preprocessing import OneHotEncoder as encoder
 
-directory = r'C:\Kuliah\ASDOS ML\Model Preparation and Evaluation'
-model=os.path.join(directory,'rf_heartDisease_model.pkl')
+
+model='rf_heartDisease_model.pkl'
 
 with open(model,'rb') as f:
     loaded_model = pickle.load(f)
