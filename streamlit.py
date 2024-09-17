@@ -28,7 +28,7 @@ Old_peak = st.slider("Old Peak",-3.0,7.0,step=0.1)
 
 #ChestPain = pd.DataFrame({'ChestPainType'}[ChestPainType])
 
-df_result=pd.DataFrame({'ChestPainType'}[ChestPainType])
+df_result=pd.DataFrame({'ChestPainType':[ChestPainType]})
 df_result['RestingECG'] = RestingECG
 df_result['ExcerciseAngina'] = ExcerciseAngina
 df_result['ST_Slope']=ST_Slope
