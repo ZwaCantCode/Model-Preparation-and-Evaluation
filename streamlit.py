@@ -5,7 +5,8 @@ import os
 from sklearn.preprocessing import OneHotEncoder 
 
 encoder = OneHotEncoder(sparse_output=False)
-model='rf_heartDisease_model.pkl'
+model_path = 'C:\Kuliah\ASDOS ML\Model Preparation and Evaluation'
+model=os.path.join(model_path,'rf_heartDisease_model.pkl')
 
 with open(model,'rb') as f:
     loaded_model = pickle.load(f)
@@ -36,9 +37,10 @@ df_result['ST_Slope']=ST_Slope
 input_encoded = encoder.fit_transform(df_result)
 input_onehot_df = pd.DataFrame(input_encoded, columns=encoder.get_feature_names_out())
 
+
 input_data = [input_onehot_df['onehotencoder__ChestPainType_ASY', 'onehotencoder__ChestPainType_ATA',
        'onehotencoder__ExerciseAngina_N', 'onehotencoder__ExerciseAngina_Y',
-       'onehotencoder__ST_Slope_Flat', 'onehotencoder__ST_Slope_Up'],MaxHR,Old_peak]
+       'onehotencoder__ST_Slope_Flat', 'onehotencoder__ST_Slope_Up']]
 
 if st.button("Prediksi"):
     rf_model_prediction = rf_model.predict(input_data)
